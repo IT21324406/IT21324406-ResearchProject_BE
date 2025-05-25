@@ -173,7 +173,7 @@ def generate_mindmap(data: dict):
     
 @app.post("/summarize")
 async def summarize(request: SummaryRequest):
-    """Endpoint for summarizing articles using the ArticleSummarizer class"""
+    """Endpoint for summarizing article using the ArticleSummarizer class"""
     result = summarizer.summarize_article(request.url, request.type)
     if result["success"]:
         return {"summary": result["summary"]}
